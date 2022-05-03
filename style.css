@@ -1,0 +1,46 @@
+.app {
+  width: 600px;
+  margin: 30px auto;
+  border: solid 1px red;
+}
+.create-new {
+  height: 40px;
+  margin: 30px 0;
+  padding: 7px;
+  align-content: center;
+  border: solid 1px red;
+  box-sizing: border-box;
+}
+input[type=text] {
+  width: 400px;
+}
+
+/* Styles for the to do list */
+.todo-list {
+  margin: 30px 0;
+  border: solid 1px red;
+}
+.task {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  border-bottom: solid 1px red;
+}
+.task p {
+  display: inline-block;
+  margin: 0 10px ;
+}
+
+/* Styles for the bottom */
+.bottom {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.bottom p {
+  display: inline-block;
+  margin: 0 10px ;
+}
+@media screen and (min-width = 375px) {
+  
+}
