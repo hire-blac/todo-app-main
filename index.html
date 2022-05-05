@@ -16,12 +16,17 @@
   <link rel="stylesheet" href="style.css">
 
 </head>
-<body>
+<body class="dark-theme">
 
   <div class="app">
 
     <div class="logo">
-      <h1>Todo</h1>
+      <div>
+        <h2>Todo</h2>
+      </div>
+      <div>
+        <a href="#" onclick="changeTheme()">Change Theme</a>
+      </div>
     </div>
   
     <form class="create-new">
@@ -37,12 +42,20 @@
           <p><span id="tasks-remaining">0</span> items left</p>
         </div>
         <div class="filters">
-          <p>All</p>
-          <p>Active</p>
-          <p>Completed</p>
+          <p>
+            <a href="#" onclick=allTasks()>All</a>
+          </p>
+          <p>
+            <a href="#" onclick=activeTasks()>Active</a>
+          </p>
+          <p>
+            <a href="#" onclick=completedTasks()>Completed</a>
+          </p>
         </div>
         <div class="completed">
-          <p>Clear Completed</p>
+          <p>
+            <a href="#" onclick=clearCompletedTasks()>Clear Completed</a>
+          </p>
         </div>
       </div>
   

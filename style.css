@@ -1,6 +1,33 @@
+.light-theme {
+  --bg-image: url("images/bg-desktop-light.jpg");
+  --lower-bg: hsl(0, 0%, 98%);
+  --checkbg: linear-gradient(90deg, hsl(280, 87%, 65%), hsl(192, 100%, 67%));
+}
+.dark-theme {
+  --bg-image: url("images/bg-desktop-dark.jpg");
+  --lower-bg: hsl(235, 21%, 11%);
+  --checkbg: linear-gradient(90deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+body {
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--lower-bg);
+}
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  border: solid 1px white;
+}
+.logo a {
+  text-decoration: none;
+  color: white;
+}
 .app {
   width: 600px;
-  margin: 30px auto;
+  margin: 20px auto;
   border: solid 1px red;
 }
 .create-new {
@@ -24,11 +51,19 @@ input[type=text] {
   display: flex;
   justify-content: space-between;
   height: 40px;
+  padding: 10px;
   border-bottom: solid 1px red;
+  box-sizing: border-box;
 }
 .task p {
   display: inline-block;
   margin: 0 10px ;
+}
+.close-button {
+  width: 20px;
+}
+.completed-task {
+  text-decoration: line-through;
 }
 
 /* Styles for the bottom */
@@ -40,6 +75,9 @@ input[type=text] {
 .bottom p {
   display: inline-block;
   margin: 0 10px ;
+}
+.footer {
+  text-align: center;
 }
 @media screen and (min-width = 375px) {
   
