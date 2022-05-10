@@ -32,12 +32,14 @@ function createNewTask(taskDesc){
   let task = document.createElement("div");
   let checkBox = document.createElement("input");
   let description = document.createElement("p");
-  let closeButton = document.createElement("a");
+  // let closeButton = document.createElement("a");
+  let closeButton = document.createElement("img");
   
   task.classList.add("task")
   checkBox.type = "checkbox";
   description.textContent = taskDesc;
-  closeButton.href = "#";
+  // closeButton.href = "#";
+  closeButton.src = "images/icon-cross.svg";
   closeButton.classList.add("close-button");
   closeButton.addEventListener("click", (e)=>deletetask(e.target))
 
@@ -62,11 +64,11 @@ function countTasks(){
     const closeButt = chi.lastChild;
 
     chi.addEventListener("mouseover", () => {
-      closeButt.textContent = "X";
+      closeButt.style.display = "inline-block";
     });
 
     chi.addEventListener("mouseout", () => {
-      closeButt.textContent = "";
+      closeButt.style.display = "none";
     });
 
     if (!completed.checked) {
@@ -92,7 +94,7 @@ function countTasks(){
 function allTasks(){
   const tasks = toDoList.childNodes;
   tasks.forEach(task => {
-    task.style.display = "flex";
+    task.style.display = "block";
   });
 }
 
@@ -102,7 +104,7 @@ function activeTasks(){
     if (task.firstChild.checked) {
       task.style.display = "none";
     } else {
-      task.style.display = "flex";
+      task.style.display = "block";
     }
   });
 }
@@ -111,7 +113,7 @@ function completedTasks(){
   const tasks = toDoList.childNodes;
   tasks.forEach(task => {
     if (task.firstChild.checked) {
-      task.style.display = "flex";
+      task.style.display = "block";
     } else {
       task.style.display = "none";
     }
@@ -130,7 +132,9 @@ function clearCompletedTasks(){
 function changeTheme(){
   if(document.querySelector("body").className == "dark-theme"){
     document.querySelector("body").className = "light-theme"
+    document.getElementById("theme-icon").setAttribute("src", "images/icon-moon.svg")
   } else {
     document.querySelector("body").className = "dark-theme"
+    document.getElementById("theme-icon").setAttribute("src", "images/icon-sun.svg")
   }
 }

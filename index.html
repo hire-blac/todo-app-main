@@ -10,7 +10,7 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
+    .attribution { font-size: 11px; text-align: center; color: hsl(234, 11%, 52%);}
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
   <link rel="stylesheet" href="style.css">
@@ -25,13 +25,15 @@
         <h2>Todo</h2>
       </div>
       <div>
-        <a href="#" onclick="changeTheme()">Change Theme</a>
+        <a href="#" onclick="changeTheme()">
+          <img id="theme-icon" src="images/icon-sun.svg" >
+        </a>
       </div>
     </div>
   
     <form class="create-new">
       <input type="checkbox" name="" id="">
-      <label for="new-todo">Create new todo</label>
+      <label for="new-todo">Create new todo </label>
       <input type="text" name="new-todo" id="new-todo" required>
     </form>
     
@@ -41,7 +43,7 @@
         <div class="items-left">
           <p><span id="tasks-remaining">0</span> items left</p>
         </div>
-        <div class="filters">
+        <div class="desktop-filters filters">
           <p>
             <a href="#" onclick=allTasks()>All</a>
           </p>
@@ -57,6 +59,18 @@
             <a href="#" onclick=clearCompletedTasks()>Clear Completed</a>
           </p>
         </div>
+      </div>
+
+      <div class="mobile-filters filters">
+        <p>
+          <a href="#" onclick=allTasks()>All</a>
+        </p>
+        <p>
+          <a href="#" onclick=activeTasks()>Active</a>
+        </p>
+        <p>
+          <a href="#" onclick=completedTasks()>Completed</a>
+        </p>
       </div>
   
     </div>

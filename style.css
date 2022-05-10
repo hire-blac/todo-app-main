@@ -1,15 +1,25 @@
 .light-theme {
-  --bg-image: url("images/bg-desktop-light.jpg");
+  --bg-desktop-image: url("images/bg-desktop-light.jpg");
+  --bg-mobile-image: url("images/bg-mobile-light.jpg");
   --lower-bg: hsl(0, 0%, 98%);
   --checkbg: linear-gradient(90deg, hsl(280, 87%, 65%), hsl(192, 100%, 67%));
+  --text-color: hsl(235, 19%, 35%);
+  --task-bg: hsl(0, 0%, 98%);
+  --task-border: hsl(236, 33%, 92%);
+  --task-shadow: hsl(236, 33%, 92%);
 }
 .dark-theme {
-  --bg-image: url("images/bg-desktop-dark.jpg");
+  --bg-desktop-image: url("images/bg-desktop-dark.jpg");
+  --bg-mobile-image: url("images/bg-mobile-dark.jpg");
   --lower-bg: hsl(235, 21%, 11%);
   --checkbg: linear-gradient(90deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  --text-color: hsl(234, 39%, 85%);
+  --task-bg: hsl(235, 24%, 19%);
+  --task-border: hsl(237, 14%, 26%);
+  --task-shadow: hsl(236, 46%, 7%);
 }
 body {
-  background-image: var(--bg-image);
+  background-image: var(--bg-mobile-image);
   background-repeat: no-repeat;
   background-size: contain;
   background-color: var(--lower-bg);
@@ -19,66 +29,140 @@ body {
   justify-content: space-between;
   align-items: center;
   color: white;
-  border: solid 1px white;
 }
-.logo a {
-  text-decoration: none;
-  color: white;
+.logo h2 {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+#theme-icon {
+  width: 20px;
 }
 .app {
-  width: 600px;
-  margin: 20px auto;
-  border: solid 1px red;
+  width: 320px;
+  margin: 10px auto;
+  color: var(--text-color);
 }
 .create-new {
-  height: 40px;
+  height: 50px;
   margin: 30px 0;
-  padding: 7px;
+  padding: 15px;
   align-content: center;
-  border: solid 1px red;
+  background-color: var(--task-bg);
   box-sizing: border-box;
+  border-radius: 3px;
 }
 input[type=text] {
-  width: 400px;
+  width: 50%;
+  margin-left: 5px;
+  background: transparent;
+  border: none;
+}
+input[type=text]:focus {
+  color: var(--text-color);
+  background: transparent;
+  border: none;
 }
 
 /* Styles for the to do list */
 .todo-list {
-  margin: 30px 0;
-  border: solid 1px red;
+  margin: 20px 0;
+  box-shadow: 0px 5px 20px 0px var(--task-shadow);
 }
 .task {
-  display: flex;
   justify-content: space-between;
-  height: 40px;
-  padding: 10px;
-  border-bottom: solid 1px red;
+  height: 50px;
+  padding: 15px;
+  border-bottom: solid 1px var(--task-border);
+  background-color: var(--task-bg);
   box-sizing: border-box;
+}
+.task:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 .task p {
   display: inline-block;
   margin: 0 10px ;
 }
 .close-button {
-  width: 20px;
+  display: none;
+  float: right;
+  width: 15px;
+  margin-top: 3px;
 }
-.completed-task {
+.completed-task p {
   text-decoration: line-through;
+  color: hsl(234, 11%, 52%);
 }
-
+input[type=checkbox] {
+  display: inline-block;
+  background: var(--checkbg);
+  border-radius: 50%;
+}
 /* Styles for the bottom */
 .bottom {
-  margin: 10px 0;
   display: flex;
   justify-content: space-between;
+  background-color: var(--task-bg);
+  padding: 10px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  color: hsl(234, 11%, 52%);
 }
 .bottom p {
   display: inline-block;
   margin: 0 10px ;
 }
+.bottom a {
+  text-decoration: none;
+  color: hsl(234, 11%, 52%);
+}
+.bottom a:hover {
+  color: var(--text-color);
+}
+.desktop-filters {
+  display: none;
+}
+.mobile-filters {
+  display: flex;
+  justify-content: center;
+  background-color: var(--task-bg);
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 5px;
+  color: hsl(234, 11%, 52%);
+  height: 40px;
+  box-sizing: border-box;
+}
+.mobile-filters p {
+  display: inline-block;
+  margin: 0 7px;
+}
+.mobile-filters a {
+  text-decoration: none;
+  color: hsl(234, 11%, 52%);
+}
+.mobile-filters a:hover {
+  color: var(--text-color);
+}
 .footer {
   text-align: center;
+  color: hsl(234, 11%, 52%);
 }
-@media screen and (min-width = 375px) {
+@media screen and (min-width: 380px) {
   
+  body {
+    background-image: var(--bg-desktop-image);
+    background-position-y: -60px;
+    background-size: contain;
+  }
+  .app {
+    width: 500px;
+  }
+  .desktop-filters {
+    display: inline-block;
+  }
+  .mobile-filters {
+    display: none;
+  }
 }
